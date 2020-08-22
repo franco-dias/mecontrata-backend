@@ -5,7 +5,7 @@ import User from '../app/models/User';
 
 const validation = yup.object().shape({
   email: yup.string().email().required(),
-  password: yup.string().min(8),
+  password: yup.string().min(8).required(),
 });
 
 class UserController {
@@ -16,7 +16,7 @@ class UserController {
       validation.validateSync({
         email,
         password,
-      });
+      }, { abortEarly: false });
     } catch (e) {
       return res.status(400).json(e);
     }

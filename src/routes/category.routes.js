@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import CategoryController from '../controllers/CategoryController';
 
-const router = Router();
+const routes = Router();
 
-router.post('/', CategoryController.store);
+routes.get('/', CategoryController.list);
+routes.post('/', CategoryController.store);
 
-export default router;
+export default routes;

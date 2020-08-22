@@ -15,7 +15,7 @@ class AdPhoto extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Announcement, { foreignKey: 'announcementId', as: 'announcement' });
+    this.belongsTo(models.Announcement, { foreignKey: 'announcementId' });
   }
 }
 

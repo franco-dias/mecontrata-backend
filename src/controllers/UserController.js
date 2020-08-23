@@ -14,6 +14,7 @@ const validation = yup.object().shape({
 
 class UserController {
   async store(req, res) {
+    console.log('entrei no store');
     const { email } = req.body;
     const hasSameEmail = await User.findOne({
       where: { email },

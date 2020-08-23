@@ -11,6 +11,7 @@ const ensureAuth = (req, res, next) => {
   try {
     const { id } = jwt.verify(token, 'mecontratabackend');
     req.userId = id;
+    console.log('user-id ------->', id);
     return next();
   } catch (e) {
     return res.status(401).json({ error: 'Token inválido' });

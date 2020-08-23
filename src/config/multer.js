@@ -13,6 +13,6 @@ const storage = multer.diskStorage({
   },
 });
 
-const uploader = multer({ storage });
+const uploader = multer({ storage, onError: (err, next) => console.log({ err }) });
 
 export default uploader;

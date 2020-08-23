@@ -4,6 +4,7 @@ class Announcement extends Model {
   static init(sequelize) {
     super.init({
       description: Sequelize.STRING,
+      price: Sequelize.STRING,
     }, {
       sequelize,
       tableName: 'announcement',

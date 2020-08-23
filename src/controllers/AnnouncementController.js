@@ -10,6 +10,7 @@ import User from '../app/models/User';
 const validation = yup.object().shape({
   description: yup.string().required(),
   categoryId: yup.number().required(),
+  price: yup.string(),
 });
 
 export const announcementInclude = [
@@ -110,6 +111,24 @@ class AnnouncementController {
       announcement,
       images,
     });
+  }
+
+  async delete(req, res) {
+    const { id } = req.params;
+    const { userId } = req;
+
+    const announcement = await Announcement.findOne({
+      where: {
+        id,
+        userId,
+      },
+    });
+    if (!announcement) {
+      return res.status(401).json({ error: 'O anúncio não existe ou não pertence a este usuário.' });
+    }
+
+    announcement.destroy();
+    return res.status(200).json({ message: 'O anúncio foi encerrado com sucesso.' });
   }
 }
 

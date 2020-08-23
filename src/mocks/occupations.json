@@ -1,0 +1,382 @@
+[
+    {
+        "description": "ALIMENTOS E BEBIDAS",
+        "color": "#FF0000",
+        "occupations": [
+            "Alimentador de linhas de produção",
+            "Auxiliar nos serviços de alimentação",
+            "Chefe de confeitaria",
+            "Chefe de cozinha",
+            "Confeiteiro",
+            "Cozinheiro",
+            "Magarefe",
+            "Padeiro",
+            "Prensador de frutas",
+            "Técnico agrícola",
+            "Tecnólogo em alimentos",
+            "Trabalhador na fabricação de cachaça, cerveja, vinhos e outras bebidas",
+            "Trabalhador na pasteurização do leite e na fabricação de laticínios e afins",
+            "Técnico de alimentos"
+        ]
+    },
+    {
+        "description": "ELETRÔNICA E MECATRÔNICA",
+        "color": "#0033CC",
+        "occupations": [
+            "Ajustador de instrumentos de precisão",
+            "Técnico em mecatrônica",
+            "Tecnólogo em automação industrial",
+            "Tecnólogo em mecatrônica industrial",
+            "Técnico em eletrônica"
+        ]
+    },
+    {
+        "description": "AUTOMOTIVA",
+        "color": "#CC0099",
+        "occupations": [
+            "Eletricista de instalações",
+            "Funileiro",
+            "Mecânico",
+            "Operador de Produção Veicular",
+            "Pintor de veículos",
+            "Tecnólogo em sistemas automotivos",
+            "Trabalhador em serviços de reparação e manutenção"
+        ]
+    },
+    {
+        "description": "Construção civil",
+        "color": "#FF9900",
+        "occupations": [
+            "Armador de estrutura de concreto armado",
+            "Gesseiro",
+            "Pedreiro",
+            "Pintor de obras",
+            "Técnico em construção civil",
+            "Técnico em controle de obras",
+            "Chapeador de carrocerias metálicas",
+            "Desenhista técnico",
+            "Eletricista de instalações",
+            "Encanador",
+            "Montador de equipamentos elétricos",
+            "Vidraceiro",
+            "Montador de andaimes",
+            "Operador de compactadora de solos",
+            "Operador de escavadeira",
+            "Técnico de laboratório de análises físico-químicas"
+        ]
+    },
+    {
+        "description": "CELULOSE E PAPEL",
+        "color": "#333300",
+        "occupations": [
+            "Operador de máquina de fabricar papel e papelão",
+            "Operador de máquina de secar celulose",
+            "Preparadores de pasta para fabricação de papel",
+            "Supervisores da fabricação de celulose e papel",
+            "Técnico de celulose e papel"
+        ]
+    },
+    {
+        "description": "CONSTRUÇÃO NAVAL",
+        "color": "#336600",
+        "occupations": [
+            "Carpinteiro naval",
+            "Laminador de plástico",
+            "Mecânico de montagem de máquinas",
+            "Montador de estruturas metálicas de embarcações",
+            "Técnico mecânico"
+        ]
+    },
+    {
+        "description": "COURO E CALÇADOS",
+        "color": "#003366",
+        "occupations": [
+            "Confeccionador de artefatos de couro",
+            "Cortador de calçados",
+            "Costurador de calçados",
+            "Costureiro de roupa de couro e pele",
+            "Curtidor (couros e peles)",
+            "Desenhista industrial de produto de moda",
+            "Desenhistas projetistas e modelistas de produtos e serviços diversos",
+            "Ferramenteiros e afins",
+            "Matrizeiro de Solados, Componentes e Artefatos.",
+            "Mecânico de manutenção de máquinas",
+            "Modelista de Calçados",
+            "Montador de artefatos de couro",
+            "Montador de calçados",
+            "Sapateiro",
+            "Técnico em calçados e artefatos de couro",
+            "Técnico em curtimento",
+            "Trabalhadores artesanais da confecção de calçados e artefatos de couros e peles",
+            "Trabalhadores da preparação da confecção de calçados"
+        ]
+    },
+    {
+        "description": "ENERGIA",
+        "color": "#9900FF",
+        "occupations": [
+            "Instalador de linhas elétricas de alta e baixa tensão",
+            "Técnico em eletricidade e eletrotécnica",
+            "Eletricista",
+            "Eletricista de manutenção eletroeletrônica",
+            "Mecânico de manutenção de máquinas-ferramentas (usinagem de metais)",
+            "Metrologista",
+            "Técnico de utilidade",
+            "Técnico em segurança do trabalho"
+        ]
+    },
+    {
+        "description": "GEMOLOGIA",
+        "color": "#995C00",
+        "occupations": [
+            "Joalheiro",
+            "Lapidador (jóias)",
+            "Ourives"
+        ]
+    },
+    {
+        "description": "GESTÃO",
+        "color": "#FF9933",
+        "occupations": [
+            "Assistente administrativo",
+            "Auxiliar de contabilidade",
+            "Operador de inspeção de qualidade",
+            "Operadores de telemarketing",
+            "Profissionais de recursos humanos",
+            "Técnico em administração",
+            "Técnico em qualidade",
+            "Tecnólogo em processos gerenciais"
+        ]
+    },
+    {
+        "description": "GRÁFICA E EDITORIAL",
+        "color": "#00FFCC",
+        "occupations": [
+            "Acabador de embalagens",
+            "Artista",
+            "Designer gráfico",
+            "Galvanizador",
+            "Gravador de matriz para flexografia (clicherista)",
+            "Gravador de matriz para rotogravura (eletromecânico e químico)",
+            "Impressor de ofsete (plano e rotativo)",
+            "Impressor digital",
+            "Impressor flexográfico",
+            "Metalizador",
+            "Montador de fotolito",
+            "Operador de acabamento",
+            "Operador de processo de tratamento de imagem",
+            "Operador de sistemas de prova",
+            "Tecnólogo em produção audiovisual",
+            "Trabalhador da impressão gráfica"
+        ]
+    },
+    {
+        "description": "LOGÍSTICA",
+        "color": "#6600FF",
+        "occupations": [
+            "Ajudante de despachante aduaneiro",
+            "Almoxarife",
+            "Comprador",
+            "Especialista em logística de transportes",
+            "Técnico de planejamento e controle de produção"
+        ]
+    },
+    {
+        "description": "MADEIRA E MOBILIÁRIO",
+        "color": "#800000",
+        "occupations": [
+            "Carpinteiro",
+            "Desenhista técnico",
+            "Estofador de móveis",
+            "Marceneiro",
+            "Montador de móveis e artefatos de madeira",
+            "Operador de máquinas de usinagem de madeira cnc",
+            "Operador de máquinas na confecção de artefatos de couro",
+            "Pintor",
+            "Projetista de móveis",
+            "Técnico do mobiliário"
+        ]
+    },
+    {
+        "description": "MEIO AMBIENTE",
+        "color": "#990033",
+        "occupations": [
+            "Agente de defesa ambiental",
+            "Técnico de controle de meio ambiente",
+            "Técnico de saneamento",
+            "Técnico em controle ambiental"
+        ]
+    },
+    {
+        "description": "MECÂNICA",
+        "color": "#333399",
+        "occupations": [
+            "Técnico mecânico na fabricação e montagem de máquinas, sistemas e instrumentos",
+            "Tecnólogo em fabricação mecânica",
+            "Ajustador mecânico",
+            "Desenhista técnico mecânico",
+            "Inspetor de qualidade",
+            "Operador de usinagem",
+            "Operador de máquinas-ferramenta convencionais",
+            "Operador de torno",
+            "Mecânico de manutenção e instalação de aparelhos de climatização e refrigeração",
+            "Técnico em eletromecânica",
+            "Técnico mecânico",
+            "Tecnólogo em manutenção industrial",
+            "Tecnólogo em mecânica de precisão"
+        ]
+    },
+    {
+        "description": "METALURGIA",
+        "color": "#009999",
+        "occupations": [
+            "Caldeireiro",
+            "Especialista em ensaios metrológicos",
+            "Instalador de tubulações",
+            "Modelador de metais",
+            "Moldador, a máquina",
+            "Operadores de fornos de primeira fusão e aciaria",
+            "Técnico de produção em refino de petróleo",
+            "Técnico em metalurgia",
+            "Trabalhador de moldagem de metais e de ligas metálicas"
+        ]
+    },
+    {
+        "description": "SOLDAGEM",
+        "color": "#3399FF",
+        "occupations": [
+            "Soldador",
+            "Técnico em soldagem",
+            "Trabalhadores de soldagem e corte de ligas metálicas"
+        ]
+    },
+    {
+        "description": "MINERAÇÃO",
+        "color": "#FF3300",
+        "occupations": [
+            "Detonador",
+            "Mineiro",
+            "Técnico de mineração",
+            "Trabalhador da extração de minerais sólidos",
+            "Ceramista",
+            "Cortador de pedras",
+            "Decorador de cerâmica",
+            "Forneiro",
+            "Operador de equipamentos de fabricação e beneficiamento",
+            "Operador de instalações e equipamentos de fabricação de materiais de construção",
+            "Técnico em materiais, produtos cerâmicos e vidros",
+            "Trabalhador de beneficiamento de pedras ornamentais",
+            "Vidreiro e ceramista"
+        ]
+    },
+    {
+        "description": "PETRÓLEO E GÁS",
+        "color": "#862D86",
+        "occupations": [
+            "Operador de Utilidade",
+            "Plataformista (Petróleo)",
+            "Sondador",
+            "Técnico em petroquímica"
+        ]
+    },
+    {
+        "description": "POLÍMEROS",
+        "color": "#B30047",
+        "occupations": [
+            "Moldador de borracha por compressão",
+            "Moldador de plástico por injeção",
+            "Operador de injetor e extrusora de plástico",
+            "Operador de Máquinas para Transformação de Borrachas",
+            "Técnico em plástico",
+            "Tecnólogo em polímeros"
+        ]
+    },
+    {
+        "description": "QUÍMICA",
+        "color": "#202060",
+        "occupations": [
+            "Laboratorista industrial auxiliar",
+            "Operador de processos químicos e petroquímicos",
+            "Técnico em biotecnologia",
+            "Técnico químico"
+        ]
+    },
+    {
+        "description": "TELECOMUNICAÇÕES",
+        "color": "#004466",
+        "occupations": [
+            "Emendador de cabos elétricos e telefônicos",
+            "Instalador e reparador de linhas e cabos elétricos, telefônicos e de comunicação de dados",
+            "Instalador e reparador de linhas e equipamentos de telecomunicações",
+            "Instalador e reparador de redes e cabos telefônicos",
+            "Técnico em telecomunicações"
+        ]
+    },
+    {
+        "description": "TÊXTIL",
+        "color": "#4747D1",
+        "occupations": [
+            "Estampador de tecido",
+            "Mecânico de manutenção de máquinas têxteis",
+            "Operador de cardas",
+            "Operador de passador (fiação)",
+            "Operador de rameuse",
+            "Operador de urdideira",
+            "Remetedor de fios",
+            "Revisor de tecidos acabados",
+            "Tecelão",
+            "Técnico de laboratório industrial",
+            "Técnico têxtil"
+        ]
+    },
+    {
+        "description": "TI",
+        "color": "#4D4DFF",
+        "occupations": [
+            "Montadores de equipamentos eletroeletrônicos",
+            "Operador de computador",
+            "Técnico de apoio ao usuário de informática",
+            "Técnico em manutenção de equipamentos de informática",
+            "Administrador de banco de dados",
+            "Analista de redes e de comunicação de dados",
+            "Programador",
+            "Técnico em desenvolvimento de sistemas"
+        ]
+    },
+    {
+        "description": "TRANSPORTE",
+        "color": "#99003D",
+        "occupations": [
+            "Agente de estação",
+            "Auxiliar de maquinista de trem",
+            "Conservadores de vias permanentes",
+            "Manobrador",
+            "Maquinista de Trem",
+            "Mecânicos de manutenção metroferroviária",
+            "Motorista"
+        ]
+    },
+    {
+        "description": "VESTUÁRIO",
+        "color": "#004D00",
+        "occupations": [
+            "Alfaiate",
+            "Artista visual, desenhista industrial",
+            "Costureiro(a)",
+            "Modelista de roupas",
+            "Técnico do vestuário"
+        ]
+    },
+    {
+        "description": "Comércio",
+        "color": "#991F00",
+        "occupations": [
+            "Bebidas",
+            "Mercado",
+            "Gás",
+            "Restaurante",
+            "Vestuário",
+            "Lanchonete"
+        ]
+    }
+]

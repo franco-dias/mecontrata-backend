@@ -6,11 +6,13 @@ import Announcement from '../app/models/Announcement';
 import Category from '../app/models/Category';
 import Avatar from '../app/models/Avatar';
 import AdPhoto from '../app/models/AdPhoto';
+import Job from '../app/models/Job';
 
 const models = [
   User,
   Announcement,
   Category,
+  Job,
   Avatar,
   AdPhoto,
 ];

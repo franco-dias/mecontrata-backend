@@ -1,12 +1,25 @@
-import * as yup from 'yup';
 import Category from '../app/models/Category';
-
-const validation = yup.object().shape({
-  color: yup.string().required(),
-  description: yup.string().required(),
-});
+import Job from '../app/models/Job';
+import categories from '../mocks/occupations.json';
 
 class CategoryController {
+  async index(req, res) {
+    const { id } = req.params;
+    const categoryList = await Category.findByPk(id, {
+      include: [
+        {
+          model: Job,
+          as: 'jobs',
+          attributes: [
+            'id',
+            'description',
+          ],
+        },
+      ],
+    });
+    return res.status(200).json(categoryList);
+  }
+
   async list(req, res) {
     const categoryList = await Category.findAll({
       attributes: [
@@ -19,14 +32,22 @@ class CategoryController {
   }
 
   async store(req, res) {
-    try {
-      validation.validateSync(req.body, { abortEarly: false });
-    } catch (e) {
-      return res.status(400).json({ error: e.errors });
-    }
-
-    const category = await Category.create(req.body);
-    return res.json(category);
+    await Category.truncate();
+    categories.map(async (category) => {
+      const { description, color, occupations } = category;
+      const newCategory = await Category.create({
+        description,
+        color,
+      });
+      const { id } = newCategory;
+      occupations.map(async (occupation) => {
+        await Job.create({
+          categoryId: id,
+          description: occupation,
+        });
+      });
+    });
+    return res.json({ ok: true });
   }
 }
 

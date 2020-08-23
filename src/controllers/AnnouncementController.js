@@ -6,6 +6,7 @@ import AdPhoto from '../app/models/AdPhoto';
 import asyncForEach from '../utils/asyncForEach';
 import Category from '../app/models/Category';
 import User from '../app/models/User';
+import Avatar from '../app/models/Avatar';
 
 const validation = yup.object().shape({
   description: yup.string().required(),
@@ -29,6 +30,15 @@ export const announcementInclude = [
       'name',
       'email',
       'phoneNumber',
+    ],
+    include: [
+      {
+        model: Avatar,
+        as: 'avatar',
+        attributes: [
+          'url',
+        ],
+      },
     ],
   },
   {
@@ -77,10 +87,9 @@ class AnnouncementController {
 
   async store(req, res) {
     const { userId } = req;
-    req.body.userId = userId;
-    console.log('upload ok');
-    // return res.status(200).json({ ok: true });
-    const { description, categoryId } = req.body;
+    const data = JSON.parse(req.body.data);
+    data.userId = userId;
+    const { description, categoryId } = data;
 
     try {
       validation.validateSync({
@@ -88,7 +97,6 @@ class AnnouncementController {
         categoryId,
       }, { abortEarly: false });
     } catch (e) {
-      console.log(e);
       return res.status(400).json({ error: e.errors });
     }
 
@@ -98,7 +106,7 @@ class AnnouncementController {
     }
 
     const images = [];
-    const announcement = await Announcement.create(req.body);
+    const announcement = await Announcement.create(data);
     if (files && files.length) {
       await asyncForEach(files, async (file) => {
         const photo = await AdPhoto.create({

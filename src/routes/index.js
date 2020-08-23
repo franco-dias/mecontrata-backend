@@ -7,8 +7,6 @@ import categoryRouter from './category.routes';
 
 const router = Router();
 
-router.get('/', (_, res) => res.json({ ok: true }));
-
 router.use('/ad', announcementRouter);
 router.use('/session', sessionRouter);
 router.use('/user', userRouter);

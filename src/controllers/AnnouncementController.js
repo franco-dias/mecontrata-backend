@@ -78,6 +78,8 @@ class AnnouncementController {
   async store(req, res) {
     const { userId } = req;
     req.body.userId = userId;
+    console.log('upload ok');
+    return res.status(200).json({ ok: true });
     const { description, categoryId } = req.body;
 
     try {

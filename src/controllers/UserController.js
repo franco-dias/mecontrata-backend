@@ -14,8 +14,8 @@ const validation = yup.object().shape({
 
 class UserController {
   async store(req, res) {
-    console.log('entrei no store');
-    const { email } = req.body;
+    const data = JSON.parse(req.body.data);
+    const { email } = data;
     const hasSameEmail = await User.findOne({
       where: { email },
     });
@@ -24,7 +24,7 @@ class UserController {
     }
 
     try {
-      validation.validateSync(req.body, { abortEarly: false });
+      validation.validateSync(data, { abortEarly: false });
     } catch (e) {
       return res.status(400).json({ error: e.errors });
     }
@@ -34,9 +34,9 @@ class UserController {
       const avatar = await Avatar.create({
         url: filename,
       });
-      req.body.avatarId = avatar.id;
+      data.avatarId = avatar.id;
     }
-    const user = await User.create(req.body);
+    const user = await User.create(data);
     return res.status(200).json(user);
   }
 }

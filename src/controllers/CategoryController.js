@@ -32,7 +32,6 @@ class CategoryController {
   }
 
   async store(req, res) {
-    await Category.truncate();
     categories.map(async (category) => {
       const { description, color, occupations } = category;
       const newCategory = await Category.create({

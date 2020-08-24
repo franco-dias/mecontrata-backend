@@ -7,10 +7,12 @@ import asyncForEach from '../utils/asyncForEach';
 import Category from '../app/models/Category';
 import User from '../app/models/User';
 import Avatar from '../app/models/Avatar';
+import Job from '../app/models/Job';
 
 const validation = yup.object().shape({
   description: yup.string().required(),
   categoryId: yup.number().required(),
+  jobId: yup.number().required(),
   price: yup.string(),
 });
 
@@ -21,6 +23,13 @@ export const announcementInclude = [
     attributes: [
       'description',
       'color',
+    ],
+  },
+  {
+    model: Job,
+    as: 'job',
+    attributes: [
+      'description',
     ],
   },
   {
@@ -89,12 +98,13 @@ class AnnouncementController {
     const { userId } = req;
     const data = JSON.parse(req.body.data);
     data.userId = userId;
-    const { description, categoryId } = data;
+    const { description, categoryId, jobId } = data;
 
     try {
       validation.validateSync({
         description,
         categoryId,
+        jobId,
       }, { abortEarly: false });
     } catch (e) {
       return res.status(400).json({ error: e.errors });

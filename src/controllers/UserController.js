@@ -9,7 +9,6 @@ const validation = yup.object().shape({
   phoneNumber: yup.string().required(),
   state: yup.string().required(),
   city: yup.string().required(),
-  job: yup.string().required(),
 });
 
 class UserController {

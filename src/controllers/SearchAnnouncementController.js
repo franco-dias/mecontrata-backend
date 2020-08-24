@@ -2,9 +2,10 @@ import { Op } from 'sequelize';
 import Announcement from '../app/models/Announcement';
 
 import Category from '../app/models/Category';
-import User from '../app/models/User';
-import AdPhoto from '../app/models/AdPhoto';
 import { announcementInclude } from './AnnouncementController';
+import Job from '../app/models/Job';
+import User from '../app/models/User';
+import Avatar from '../app/models/Avatar';
 
 class SearchAnnouncementController {
   async list(req, res) {
@@ -26,6 +27,25 @@ class SearchAnnouncementController {
         attributes: ['id'],
       },
     );
+
+    const byJob = await Announcement.findAll(
+      {
+        include: [
+          {
+            model: Job,
+            as: 'job',
+            where: {
+              description: {
+                [Op.like]: `%${s}%`,
+              },
+            },
+            attributes: ['description'],
+          },
+        ],
+        attributes: ['id'],
+      },
+    );
+
     const byDescription = await Announcement.findAll({
       where: {
         description: {
@@ -35,15 +55,14 @@ class SearchAnnouncementController {
       attributes: ['id'],
     });
 
-    const ids = byCategory.concat(byDescription).map((item) => item.id);
-
+    const ids = byCategory.concat(byDescription).concat(byJob).map((item) => item.id);
     const announcements = await Announcement.findAll({
       where: {
         id: {
           [Op.in]: ids,
         },
       },
-      includes: announcementInclude,
+      include: announcementInclude,
       limit: perPage,
       offset: perPage * (page - 1),
     });

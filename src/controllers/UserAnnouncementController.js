@@ -26,7 +26,7 @@ class UserAnnouncementController {
     });
 
     const { count, rows } = announcements;
-
+    console.log(JSON.stringify(rows, null, 1));
     return res.status(200).json({
       count,
       list: rows,

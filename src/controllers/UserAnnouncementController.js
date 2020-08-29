@@ -5,6 +5,7 @@ import { announcementInclude } from './AnnouncementController';
 class UserAnnouncementController {
   async list(req, res) {
     const userId = req.params.userId || req.userId;
+    console.log(`returning announcements for user ${userId}`);
     const {
       page, perPage, orderBy, order,
     } = req.query;
@@ -26,7 +27,6 @@ class UserAnnouncementController {
     });
 
     const { count, rows } = announcements;
-    console.log(JSON.stringify(rows, null, 1));
     return res.status(200).json({
       count,
       list: rows,

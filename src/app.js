@@ -4,6 +4,7 @@ import { resolve } from 'path';
 import cors from 'cors';
 
 import './database';
+import './mongoose';
 import routes from './routes';
 
 class App {

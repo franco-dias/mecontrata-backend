@@ -116,6 +116,7 @@ class AnnouncementController {
     }
 
     const images = [];
+    console.log(JSON.stringify(data, null, 1));
     const announcement = await Announcement.create(data);
     if (files && files.length) {
       await asyncForEach(files, async (file) => {

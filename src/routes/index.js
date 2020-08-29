@@ -14,6 +14,10 @@ router.use('/user', userRouter);
 router.use('/category', categoryRouter);
 router.get('/states/list', StatesController.list);
 
-router.get('/test', (_, res) => res.status(200).json({ ok: true }));
+router.get('/test', (_, res) => {
+  res.status(200).json({ ok: true });
+});
+
+router.get('/testerror', (_, res) => res.status(403).json({ error: 'This is a test error' }));
 
 export default router;

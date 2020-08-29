@@ -6,12 +6,10 @@ const ensureAuth = (req, res, next) => {
     return res.status(401).json({ error: 'Token não fornecido.' });
   }
 
-  console.log(authorization);
-
   const [, token] = authorization.split(' ');
-  console.log({ token });
   try {
     const { id } = jwt.verify(token, 'mecontratabackend');
+    console.log(`token requested: ${token}`);
     req.userId = id;
     return next();
   } catch (e) {

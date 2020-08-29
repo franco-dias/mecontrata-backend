@@ -34,7 +34,7 @@ class User extends Model {
     this.belongsTo(models.Avatar, { foreignKey: 'avatarId', as: 'avatar' });
   }
 
-  checkPassword(password) {
+  async checkPassword(password) {
     return bcrypt.compare(password, this.password);
   }
 }

@@ -36,14 +36,14 @@ class UserController {
       return res.status(401).json({ error: 'E-mail ou senha inválidos.' });
     }
 
-    if (!user.checkPassword(password)) {
+    const checkPassword = await user.checkPassword(password);
+
+    if (!checkPassword) {
       return res.status(401).json({ error: 'E-mail ou senha inválidos.' });
     }
-
     const { id } = user;
     const token = jwt.sign({ id }, 'mecontratabackend');
-    console.log(token);
-
+    console.log(`user ${id} now has token ${token}`);
     delete user.password;
     return res.status(200).json({
       user,

@@ -1,10 +1,13 @@
 import express from 'express';
 import 'dotenv/config';
 import { resolve } from 'path';
+import http from 'http';
 import cors from 'cors';
 
 import './database';
 import './mongoose';
+import setupWebSocket from './websocket';
+
 import routes from './routes';
 
 class App {
@@ -13,6 +16,9 @@ class App {
 
     this.middlewares();
     this.routes();
+
+    this.server = http.Server(this.server);
+    setupWebSocket(this.server);
   }
 
   middlewares() {

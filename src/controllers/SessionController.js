@@ -43,7 +43,6 @@ class UserController {
     }
     const { id } = user;
     const token = jwt.sign({ id }, 'mecontratabackend');
-    console.log(`user ${id} now has token ${token}`);
     delete user.password;
     return res.status(200).json({
       user,

@@ -34,5 +34,6 @@ export default function setupWebSocket(server) {
 }
 
 export const sendMessage = ({ socketId, type, data }) => {
+  console.log(`emitting message of type ${type} to socket ${socketId}`);
   io.to(socketId).emit(type, data);
 };

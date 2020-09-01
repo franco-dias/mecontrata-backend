@@ -15,6 +15,10 @@ const roomSchema = new Schema({
   updatedAt: Date,
   announcementId: Number,
   lastMessageId: String,
+  messageCount: {
+    type: Number,
+    default: 0,
+  },
 });
 
 export default mongoose.model('Room', roomSchema);

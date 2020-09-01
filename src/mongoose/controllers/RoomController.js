@@ -4,19 +4,25 @@ import User from '../../app/models/User';
 import Avatar from '../../app/models/Avatar';
 import Announcement from '../../app/models/Announcement';
 import Job from '../../app/models/Job';
+import asyncForEach from '../../utils/asyncForEach';
 
 import Room from '../schemas/Room';
+import Message from '../schemas/Message';
 
 class RoomController {
   async index(req, res) {
     const { userId } = req;
-    const { id } = req.params;
+    const { roomId } = req.params;
     const room = await Room.findOne({
       'userList.id': userId,
-      roomId: id,
+      roomId,
     });
 
-    const [user] = room.userList.filter((user) => user.id !== userId);
+    const messages = await Message.find({
+      roomId,
+    });
+
+    const [user] = room.userList.filter((u) => u.id !== userId);
 
     if (!room) {
       return res.status(400).json({ error: 'Usuário não tem permissão para esta sala, ou ela não existe.' });
@@ -25,6 +31,7 @@ class RoomController {
       title: room.title,
       user,
       roomId: room.roomId,
+      messages,
     });
   }
 
@@ -35,12 +42,31 @@ class RoomController {
       'userList.id': userId,
     });
 
-    return res.status(200).json(rooms.map((room) => ({
-      updatedAt: room.updatedAt,
-      roomId: room.roomId,
-      user: room.userList.filter((user) => user.id !== userId),
-      title: room.title,
-    })));
+    const roomList = [];
+
+    await asyncForEach(rooms, async (room) => {
+      const lastRoomMessage = await Message.findOne({
+        messageId: room.lastMessageId,
+      });
+      const messages = await Message.find({
+        roomId: room.roomId,
+      });
+
+      roomList.push({
+        updatedAt: room.updatedAt,
+        roomId: room.roomId,
+        user: room.userList.filter((user) => user.id !== userId),
+        title: room.title,
+        lastMessage: lastRoomMessage && {
+          text: lastRoomMessage.text,
+          seen: lastRoomMessage.seen,
+          isOwnMessage: lastRoomMessage.userId === userId,
+        },
+        messages,
+      });
+    });
+
+    return res.status(200).json(roomList);
   }
 
   async store(req, res) {
@@ -101,6 +127,7 @@ class RoomController {
       roomId: v4(),
       updatedAt: new Date(),
       announcementId,
+      messageCount: 0,
     });
 
     return res.status(200).json(room);

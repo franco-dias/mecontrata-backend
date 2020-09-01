@@ -11,10 +11,11 @@ routes.use(ensureAuth);
 
 routes.post('/room', RoomController.store);
 
-routes.get('/room/:id', RoomController.index);
+routes.get('/room/:roomId', RoomController.index);
 routes.get('/room', RoomController.list);
 
-routes.get('/message/room/:id', MessageController.list);
+routes.get('/message/room/:roomId', MessageController.list);
+routes.put('/message/room/:roomId', MessageController.update);
 
 routes.post('/message', MessageController.store);
 

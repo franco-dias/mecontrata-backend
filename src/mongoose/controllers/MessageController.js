@@ -9,7 +9,7 @@ import { sendMessage } from '../../websocket';
 class MessageController {
   async list(req, res) {
     const { userId } = req;
-    const { id: roomId } = req.params;
+    const { roomId } = req.params;
     const room = await Room.findOne({
       roomId,
       'userList.id': userId,
@@ -35,7 +35,6 @@ class MessageController {
     if (!room) {
       return res.status(400).json({ error: 'Usuário não faz parte dessa conversa, ou ela não existe.' });
     }
-
     const { text } = req.body;
     const message = await Message.create({
       seen: false,
@@ -45,6 +44,13 @@ class MessageController {
       text,
       messageId: v4(),
     });
+
+    console.log(JSON.stringify(message, null, 1));
+
+    room.lastMessageId = message.messageId;
+    room.updatedAt = new Date();
+    room.messageCount += 1;
+    room.save();
 
     const { userList } = room;
 
@@ -61,7 +67,30 @@ class MessageController {
       }
     });
 
-    return res.status(200).json({});
+    return res.status(200).json(message);
+  }
+
+  async update(req, res) {
+    const { userId } = req;
+    const { roomId } = req.params;
+
+    const room = await Room.find({
+      'userList.id': userId,
+      roomId,
+    });
+    if (!room) {
+      return res.status(401).json({ error: 'Usuário não tem permissões de acesso nessa sala.' });
+    }
+
+    await Message.updateMany(
+      {
+        roomId,
+        seen: false,
+        userId: { $ne: userId },
+      },
+      { $set: { seen: true } },
+    );
+    return res.status(200).json({ message: 'Mensagens marcadas como lidas.' });
   }
 }
 

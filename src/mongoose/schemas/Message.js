@@ -1,8 +1,9 @@
 import mongoose, { Schema } from 'mongoose';
 
 const messageSchema = new Schema({
-  userId: Number,
-  roomId: String,
+  sender: Number,
+  recipient: Number,
+  ad: Number,
   messageId: String,
   text: String,
   createdAt: String,
